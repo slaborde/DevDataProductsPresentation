@@ -1,0 +1,93 @@
+---
+title       : Names Application
+subtitle    : How Popular is your name ??
+author      : Sebastian Laborde
+job         : 
+framework   : revealjs      # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : default       # 
+widgets     : [nvd3]            # {mathjax, quiz, bootstrap}
+mode        : standalone # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Names Application
+
+<span style="color:green; font-weight:bold">Objective:</span>
+Answer the question How Popular is your name between 1960 and 2010 ??
+
+## It is easy to use and very funny.
+
+--- .class #id 
+
+## How to use it ??
+
+## The Input:
+### You only provide your name and your birth year.
+
+
+--- .class #id 
+
+## How to use it ??
+
+## The Ouput:
+
+1. **You get the total people (with the name you entered) born in the year you input.** 
+2. **In the first tab you get an interactive line chart using NVD3 with the statistics of the name you entered.**
+3. **In the second tab you get a donut chart wiht the top 10 popular male names in the year you entered.**
+4. **In the third tab you get a donut chart wiht the top 10 popular female names in the year you entered.**
+
+--- .class #id 
+
+## Example
+
+## Line Chart on 3rd Tab for Sebastian
+
+
+```{r, echo=FALSE, warning=FALSE}
+library(ggplot2)
+library(devtools)
+library(rCharts)
+
+userData <- function(names){
+      userData <- subset(data, Name == names)
+}
+
+top10 <- function(year, gender){
+      top10 <- subset(data, Year == year & Sex == gender, select = c('Name','TotalBirth'))
+      top10 <- top10[order(-top10$TotalBirth),]
+      head(top10, 10)
+}
+
+colClasses <- c('numeric','factor','factor', 'character')
+data <- read.csv('nombre_nacim_por_anio_y_sexo.csv', 
+                 header = TRUE, na.strings = "NA", colClasses = colClasses,  skipNul = TRUE)
+
+data <- subset(data, Name != '') 
+data <- data.frame(Year = data$Year, Sex = data$Sex, Name = data$Name, 
+                   TotalBirth = as.numeric(data$TotalBirth))
+
+uData <- userData('SEBASTIAN')
+if (nrow(uData) > 0) {
+      uData <- aggregate(data = uData, TotalBirth ~ Year + Name, sum) 
+      x <- subset(uData, Year == 1979, select = c('Year','TotalBirth'))
+}
+```
+
+```{r nvd3plot, results = 'asis', comment = NA, message = F, echo = F}
+require(rCharts)
+library(knitr)
+n1 <- nPlot(TotalBirth ~ Year, data = uData, group = 'Name', 
+                              type = "lineChart")
+n1$addParams(dom = 'stat', width = 600, height = 300)
+n1
+```
+
+
+
+
+### Check it at 
+[shinyapps](https://slaborde.shinyapps.io/workspace/)
+
+
+

@@ -1,0 +1,349 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.css'>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'></script>
+    <script src='//d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.js' type='text/javascript'></script>
+    <script src='//nvd3.org/assets/lib/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 600px;
+      height: 300px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'stat' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawstat()
+    });
+    function drawstat(){  
+      var opts = {
+ "dom": "stat",
+"width":    600,
+"height":    300,
+"x": "Year",
+"y": "TotalBirth",
+"group": "Name",
+"type": "lineChart",
+"id": "stat" 
+},
+        data = [
+ {
+ "Year":           1960,
+"Name": "SEBASTIAN",
+"TotalBirth":              2 
+},
+{
+ "Year":           1961,
+"Name": "SEBASTIAN",
+"TotalBirth":              3 
+},
+{
+ "Year":           1962,
+"Name": "SEBASTIAN",
+"TotalBirth":              5 
+},
+{
+ "Year":           1963,
+"Name": "SEBASTIAN",
+"TotalBirth":              4 
+},
+{
+ "Year":           1964,
+"Name": "SEBASTIAN",
+"TotalBirth":              1 
+},
+{
+ "Year":           1965,
+"Name": "SEBASTIAN",
+"TotalBirth":              5 
+},
+{
+ "Year":           1966,
+"Name": "SEBASTIAN",
+"TotalBirth":              4 
+},
+{
+ "Year":           1967,
+"Name": "SEBASTIAN",
+"TotalBirth":              9 
+},
+{
+ "Year":           1968,
+"Name": "SEBASTIAN",
+"TotalBirth":             10 
+},
+{
+ "Year":           1969,
+"Name": "SEBASTIAN",
+"TotalBirth":             11 
+},
+{
+ "Year":           1970,
+"Name": "SEBASTIAN",
+"TotalBirth":             20 
+},
+{
+ "Year":           1971,
+"Name": "SEBASTIAN",
+"TotalBirth":             36 
+},
+{
+ "Year":           1972,
+"Name": "SEBASTIAN",
+"TotalBirth":             73 
+},
+{
+ "Year":           1973,
+"Name": "SEBASTIAN",
+"TotalBirth":             75 
+},
+{
+ "Year":           1974,
+"Name": "SEBASTIAN",
+"TotalBirth":            117 
+},
+{
+ "Year":           1975,
+"Name": "SEBASTIAN",
+"TotalBirth":            177 
+},
+{
+ "Year":           1976,
+"Name": "SEBASTIAN",
+"TotalBirth":            223 
+},
+{
+ "Year":           1977,
+"Name": "SEBASTIAN",
+"TotalBirth":            335 
+},
+{
+ "Year":           1978,
+"Name": "SEBASTIAN",
+"TotalBirth":            323 
+},
+{
+ "Year":           1979,
+"Name": "SEBASTIAN",
+"TotalBirth":            350 
+},
+{
+ "Year":           1980,
+"Name": "SEBASTIAN",
+"TotalBirth":            354 
+},
+{
+ "Year":           1981,
+"Name": "SEBASTIAN",
+"TotalBirth":            396 
+},
+{
+ "Year":           1982,
+"Name": "SEBASTIAN",
+"TotalBirth":            351 
+},
+{
+ "Year":           1983,
+"Name": "SEBASTIAN",
+"TotalBirth":            312 
+},
+{
+ "Year":           1984,
+"Name": "SEBASTIAN",
+"TotalBirth":            310 
+},
+{
+ "Year":           1985,
+"Name": "SEBASTIAN",
+"TotalBirth":            314 
+},
+{
+ "Year":           1986,
+"Name": "SEBASTIAN",
+"TotalBirth":            292 
+},
+{
+ "Year":           1987,
+"Name": "SEBASTIAN",
+"TotalBirth":            307 
+},
+{
+ "Year":           1988,
+"Name": "SEBASTIAN",
+"TotalBirth":            271 
+},
+{
+ "Year":           1989,
+"Name": "SEBASTIAN",
+"TotalBirth":            244 
+},
+{
+ "Year":           1990,
+"Name": "SEBASTIAN",
+"TotalBirth":            254 
+},
+{
+ "Year":           1991,
+"Name": "SEBASTIAN",
+"TotalBirth":            251 
+},
+{
+ "Year":           1992,
+"Name": "SEBASTIAN",
+"TotalBirth":            202 
+},
+{
+ "Year":           1993,
+"Name": "SEBASTIAN",
+"TotalBirth":            232 
+},
+{
+ "Year":           1994,
+"Name": "SEBASTIAN",
+"TotalBirth":            192 
+},
+{
+ "Year":           1995,
+"Name": "SEBASTIAN",
+"TotalBirth":            239 
+},
+{
+ "Year":           1996,
+"Name": "SEBASTIAN",
+"TotalBirth":            268 
+},
+{
+ "Year":           1997,
+"Name": "SEBASTIAN",
+"TotalBirth":            245 
+},
+{
+ "Year":           1998,
+"Name": "SEBASTIAN",
+"TotalBirth":            217 
+},
+{
+ "Year":           1999,
+"Name": "SEBASTIAN",
+"TotalBirth":            198 
+},
+{
+ "Year":           2000,
+"Name": "SEBASTIAN",
+"TotalBirth":            170 
+},
+{
+ "Year":           2001,
+"Name": "SEBASTIAN",
+"TotalBirth":            200 
+},
+{
+ "Year":           2002,
+"Name": "SEBASTIAN",
+"TotalBirth":            178 
+},
+{
+ "Year":           2003,
+"Name": "SEBASTIAN",
+"TotalBirth":            175 
+},
+{
+ "Year":           2004,
+"Name": "SEBASTIAN",
+"TotalBirth":            147 
+},
+{
+ "Year":           2005,
+"Name": "SEBASTIAN",
+"TotalBirth":            135 
+},
+{
+ "Year":           2006,
+"Name": "SEBASTIAN",
+"TotalBirth":            156 
+},
+{
+ "Year":           2007,
+"Name": "SEBASTIAN",
+"TotalBirth":            120 
+},
+{
+ "Year":           2008,
+"Name": "SEBASTIAN",
+"TotalBirth":            123 
+},
+{
+ "Year":           2009,
+"Name": "SEBASTIAN",
+"TotalBirth":            112 
+},
+{
+ "Year":           2010,
+"Name": "SEBASTIAN",
+"TotalBirth":            103 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>
