@@ -47,12 +47,7 @@ Answer the question How Popular is your name between 1960 and 2010 ??
 
 
 
-
-```
-Error in eval(expr, envir, enclos): tentativa de aplicar una no-funci'on
-```
-
-![plot of chunk nvd3plot](assets/fig/nvd3plot-1.png) 
+<iframe src=' assets/fig/nvd3plot-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- stat ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 
 
