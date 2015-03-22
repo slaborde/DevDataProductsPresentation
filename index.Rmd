@@ -77,15 +77,10 @@ library(devtools)
 library(rCharts)
 library(knitr)
 
-# n1 <- nPlot(TotalBirth ~ Year, data = uData, group = 'Name', 
-#                               type = "lineChart")
-# n1$addParams(dom = 'stat', width = 600, height = 300)
-# n1$show(cdn = TRUE)
-
-g <- ggplot(uData, aes(Year,TotalBirth))
-g <- g + geom_line(aes(color = Name), size = 1, alpha = 1)
-g$addParams(width = 600, height = 300)
-g
+n1 <- nPlot(TotalBirth ~ Year, data = uData, group = 'Name', 
+                              type = "lineChart")
+n1$addParams(dom = 'stat', width = 600, height = 300)
+n1$show(cdn = TRUE)
 ```
 
 
