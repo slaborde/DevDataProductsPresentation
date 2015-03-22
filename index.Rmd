@@ -86,8 +86,7 @@ n1$show(cdn = TRUE)
 
 
 
-#### Check it at 
-[shinyapps](https://slaborde.shinyapps.io/workspace/)
+#### Check it at [shinyapps](https://slaborde.shinyapps.io/workspace/)
 
 
 
